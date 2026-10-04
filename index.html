@@ -1,0 +1,1927 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday 💙</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:"Segoe UI",Arial,sans-serif;
+    color:#173b63;
+
+    background:
+        radial-gradient(circle at 10% 10%,#ffffff 0%,transparent 28%),
+        radial-gradient(circle at 90% 15%,#d9efff 0%,transparent 30%),
+        radial-gradient(circle at 50% 100%,#cce8ff 0%,transparent 35%),
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #eef8ff,
+            #dcefff,
+            #f8fcff
+        );
+}
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eef8ff;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#74bdf5,#287fc4);
+    border-radius:20px;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* glowing circles */
+
+.glow{
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:rgba(84,177,245,.16);
+    filter:blur(40px);
+    animation:glowMove 9s ease-in-out infinite alternate;
+}
+
+.glow.one{
+    top:5%;
+    left:-80px;
+}
+
+.glow.two{
+    top:45%;
+    right:-100px;
+    animation-delay:2s;
+}
+
+.glow.three{
+    bottom:-100px;
+    left:35%;
+    animation-delay:4s;
+}
+
+@keyframes glowMove{
+
+    from{
+        transform:translate(0,0) scale(1);
+    }
+
+    to{
+        transform:translate(60px,-40px) scale(1.3);
+    }
+}
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.petal{
+    position:absolute;
+    top:-50px;
+    opacity:0;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+
+    0%{
+        transform:translateY(-80px) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.7;
+    }
+
+    90%{
+        opacity:.5;
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   FLOATING FLOWERS
+========================================================= */
+
+.flower{
+    position:absolute;
+    opacity:.18;
+    font-size:90px;
+    animation:flowerFloat 6s ease-in-out infinite;
+}
+
+.flower.one{
+    left:-20px;
+    top:8%;
+}
+
+.flower.two{
+    right:-20px;
+    top:20%;
+    font-size:110px;
+    animation-delay:1s;
+}
+
+.flower.three{
+    left:-25px;
+    top:50%;
+    font-size:75px;
+    animation-delay:2s;
+}
+
+.flower.four{
+    right:-15px;
+    top:65%;
+    font-size:85px;
+    animation-delay:3s;
+}
+
+@keyframes flowerFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-18px) rotate(6deg);
+    }
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:35px 0 80px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 10px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:10px 22px;
+    border-radius:50px;
+
+    color:#2875b4;
+
+    background:rgba(255,255,255,.65);
+    border:1px solid rgba(67,153,215,.25);
+
+    backdrop-filter:blur(15px);
+
+    font-size:13px;
+    letter-spacing:2px;
+
+    box-shadow:
+        0 10px 30px rgba(40,120,180,.08);
+
+    animation:fadeDown 1s ease;
+}
+
+.hero h1{
+
+    margin-top:25px;
+
+    font-size:clamp(55px,11vw,115px);
+    line-height:.95;
+
+    color:#1769a5;
+
+    text-shadow:
+        0 8px 30px rgba(40,130,200,.18);
+
+    animation:titleAppear 1.2s ease;
+}
+
+.hero h1 span{
+
+    display:block;
+
+    margin-top:20px;
+
+    font-size:clamp(25px,5vw,46px);
+
+    font-weight:400;
+
+    color:#5796c5;
+}
+
+.hero p{
+
+    margin-top:30px;
+
+    max-width:700px;
+
+    font-size:clamp(16px,3vw,21px);
+
+    line-height:1.7;
+
+    color:#4b7596;
+
+    animation:fadeUp 1.4s ease;
+}
+
+.hero-button{
+
+    margin-top:35px;
+
+    padding:16px 32px;
+
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #72c5ff,
+        #237bb9
+    );
+
+    color:white;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 12px 35px rgba(35,123,185,.25);
+
+    transition:.35s;
+}
+
+.hero-button:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 18px 45px rgba(35,123,185,.35);
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes titleAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================================================
+   GLASS CARDS
+========================================================= */
+
+.card{
+
+    margin-top:30px;
+
+    padding:38px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.82),
+            rgba(239,248,255,.68)
+        );
+
+    border:1px solid rgba(70,150,210,.18);
+
+    box-shadow:
+        0 20px 60px rgba(40,110,165,.10);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+    opacity:0;
+    transform:translateY(35px);
+}
+
+.card.show{
+
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 25px 70px rgba(40,110,165,.16);
+}
+
+.card h2{
+
+    text-align:center;
+
+    color:#1769a5;
+
+    font-size:30px;
+
+    margin-bottom:22px;
+}
+
+.card p{
+
+    color:#4d718e;
+
+    line-height:1.9;
+
+    font-size:16px;
+}
+
+/* =========================================================
+   CAKE
+========================================================= */
+
+.cake{
+
+    text-align:center;
+
+    font-size:90px;
+
+    margin-bottom:10px;
+
+    animation:cakeMove 2.5s ease-in-out infinite;
+}
+
+@keyframes cakeMove{
+
+    0%,100%{
+        transform:translateY(0) rotate(-2deg);
+    }
+
+    50%{
+        transform:translateY(-12px) rotate(2deg);
+    }
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+button{
+
+    display:block;
+
+    margin:27px auto 0;
+
+    padding:15px 30px;
+
+    border:0;
+
+    border-radius:50px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6ec5ff,
+            #287db9
+        );
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 30px rgba(40,120,185,.25);
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 40px rgba(40,120,185,.35);
+}
+
+button:active{
+
+    transform:scale(.95);
+}
+
+/* =========================================================
+   HIDDEN / REVEAL
+========================================================= */
+
+.hidden{
+    display:none;
+}
+
+.reveal{
+
+    margin-top:25px;
+
+    padding:27px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(218,242,255,.85),
+            rgba(255,255,255,.8)
+        );
+
+    border:
+        1px solid rgba(50,140,205,.18);
+
+    animation:reveal .7s ease;
+}
+
+@keyframes reveal{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(20px)
+            scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote{
+
+    margin-top:27px;
+
+    padding:28px;
+
+    border-left:
+        5px solid #55a9df;
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    font-size:19px;
+
+    line-height:1.7;
+
+    font-style:italic;
+
+    color:#28648e;
+
+    box-shadow:
+        0 10px 30px rgba(50,130,180,.07);
+}
+
+.quote small{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:13px;
+
+    font-style:normal;
+
+    color:#7394ab;
+}
+
+/* =========================================================
+   QUOTE GRID
+========================================================= */
+
+.quote-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:18px;
+}
+
+.quote-box{
+
+    padding:26px;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    border:
+        1px solid rgba(60,140,200,.13);
+
+    transition:.35s;
+}
+
+.quote-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(50,130,190,.12);
+}
+
+.quote-icon{
+
+    font-size:32px;
+
+    margin-bottom:13px;
+}
+
+/* =========================================================
+   THINGS
+========================================================= */
+
+.things{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+}
+
+.thing{
+
+    padding:27px 15px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    transition:.35s;
+}
+
+.thing:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(50,130,190,.12);
+}
+
+.thing-icon{
+
+    font-size:38px;
+
+    margin-bottom:12px;
+}
+
+.thing h3{
+
+    color:#1769a5;
+
+    margin-bottom:10px;
+}
+
+.thing p{
+
+    font-size:13px;
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline{
+
+    margin-top:10px;
+
+    padding-left:28px;
+
+    border-left:
+        3px solid #82c5ed;
+}
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:32px;
+}
+
+.timeline-item:last-child{
+    margin-bottom:0;
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-37px;
+
+    top:5px;
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:#3f9ad1;
+
+    box-shadow:
+        0 0 0 5px rgba(63,154,209,.14),
+        0 0 20px rgba(63,154,209,.3);
+}
+
+.timeline-item h3{
+
+    color:#236f9f;
+
+    margin-bottom:7px;
+}
+
+/* =========================================================
+   REMINDERS
+========================================================= */
+
+.reminders{
+
+    display:grid;
+
+    gap:12px;
+}
+
+.reminder{
+
+    padding:17px 20px;
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.7);
+
+    color:#4b718d;
+
+    transition:.3s;
+}
+
+.reminder:hover{
+
+    transform:translateX(7px);
+
+    background:
+        rgba(220,242,255,.8);
+}
+
+.reminder::before{
+
+    content:"✓";
+
+    margin-right:11px;
+
+    color:#2585c0;
+
+    font-weight:bold;
+}
+
+/* =========================================================
+   FLOWER SECTION
+========================================================= */
+
+.flower-section{
+
+    text-align:center;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.flower-big{
+
+    font-size:115px;
+
+    margin:15px 0;
+
+    animation:flowerFloat 5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 15px 20px rgba(60,150,210,.15)
+        );
+}
+
+.flower-section p{
+
+    max-width:650px;
+
+    margin:auto;
+}
+
+/* =========================================================
+   SURPRISE
+========================================================= */
+
+.surprise{
+
+    text-align:center;
+
+    padding:45px 20px;
+}
+
+.surprise-icon{
+
+    font-size:70px;
+
+    animation:giftBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes giftBounce{
+
+    0%,100%{
+        transform:translateY(0) rotate(-4deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(4deg);
+    }
+}
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final{
+
+    margin-top:45px;
+
+    padding:65px 25px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(203,236,255,.9),
+            rgba(255,255,255,.92)
+        );
+
+    border:
+        1px solid rgba(50,140,200,.18);
+
+    box-shadow:
+        0 25px 70px rgba(40,120,180,.13);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.final::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+        rgba(80,180,240,.12);
+
+    filter:blur(20px);
+
+    top:-100px;
+    left:-70px;
+}
+
+.final h2{
+
+    font-size:
+        clamp(32px,6vw,52px);
+
+    color:#1769a5;
+
+    margin-bottom:20px;
+}
+
+.final p{
+
+    color:#4e718b;
+
+    line-height:1.8;
+}
+
+.signature{
+
+    margin-top:28px;
+
+    color:#4b88b1;
+
+    font-size:18px;
+
+    font-style:italic;
+}
+
+/* =========================================================
+   FLOATING EMOJIS
+========================================================= */
+
+.floating{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    z-index:50;
+
+    pointer-events:none;
+
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+.music-button{
+
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    z-index:100;
+
+    padding:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #75c9ff,
+            #247bb8
+        );
+
+    box-shadow:
+        0 10px 30px rgba(40,120,190,.3);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:800px){
+
+    .things{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    .container{
+        width:94%;
+    }
+
+    .card{
+        padding:28px 20px;
+    }
+
+    .quote-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:80vh;
+    }
+
+    .flower{
+        font-size:60px;
+    }
+
+    .flower.two{
+        font-size:75px;
+    }
+
+}
+
+@media(max-width:430px){
+
+    .things{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:54px;
+    }
+
+    .hero h1 span{
+        font-size:27px;
+    }
+
+    .flower-big{
+        font-size:85px;
+    }
+
+}
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =======================================================
+     BACKGROUND
+======================================================= -->
+
+<div class="background">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <div class="glow three"></div>
+
+    <div class="flower one">🌸</div>
+    <div class="flower two">🌸</div>
+    <div class="flower three">🌸</div>
+    <div class="flower four">🌸</div>
+
+</div>
+
+
+<!-- =======================================================
+     MUSIC
+======================================================= -->
+
+<audio id="birthdayMusic" loop>
+    <!-- Add your own music file here -->
+    <!-- Example:
+    <source src="music.mp3" type="audio/mpeg">
+    -->
+</audio>
+
+<button
+    class="music-button"
+    type="button"
+    onclick="toggleMusic()"
+    id="musicButton"
+    aria-label="Music"
+>
+    🎵
+</button>
+
+
+<div class="container">
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+    <div class="badge">
+        A LITTLE WEBSITE, A BIG WISH ✨
+    </div>
+
+    <h1>
+        Happy Birthday 💙
+        <span>to someone special...</span>
+    </h1>
+
+    <p>
+        Huii ji... aaj ka din sirf aapka hai. 🌸
+        <br>
+        So I made something a little special for you.
+    </p>
+
+    <button
+        class="hero-button"
+        type="button"
+        onclick="startExperience()"
+    >
+        ✨ Start Your Birthday
+    </button>
+
+</section>
+
+
+<!-- =======================================================
+     MESSAGE
+======================================================= -->
+
+<div class="card reveal-card">
+
+    <div class="cake">
+        🎂
+    </div>
+
+    <h2>
+        Happy Birthday, My Lady 🥹💙
+    </h2>
+
+    <p>
+        Aaj ka din special hai ji, toh simple sa
+        "Happy Birthday" bolke kaam nahi chalega. 💙
+    </p>
+
+    <p style="margin-top:15px">
+        Isliye thoda time laga ke ye choti si website
+        bana di. Bas hope hai ki aapko achhi lagegi. ✨
+    </p>
+
+    <button
+        type="button"
+        onclick="openMessage()"
+    >
+        💌 Ek choti si baat hai...
+    </button>
+
+    <div
+        id="message"
+        class="reveal hidden"
+    >
+
+        <p>
+            Pata nahi main ye sab properly bol paunga ya nahi ji...
+            isliye website bana ke bol raha hoon. (^///^)
+        </p>
+
+        <p style="margin-top:15px">
+            Bas aap hamesha khush raho, haste raho,
+            aur life mein bohot saari beautiful memories banao. 💙
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     LETTER
+======================================================= -->
+
+<div class="card reveal-card">
+
+    <h2>
+        💌 Ek Choti Si Baat...
+    </h2>
+
+    <p>
+        Sach bolu toh mujhe long-long messages likhna
+        zyada nahi aata ji. 😭
+    </p>
+
+    <p style="margin-top:15px">
+        Lekin birthday hai, toh aaj thoda extra likhna
+        toh banta hai. 💙
+    </p>
+
+    <p style="margin-top:15px">
+        Aap mere liye kaafi special ho, aur main genuinely
+        chahta hoon ki aapka ye birthday bohot achha jaaye.
+    </p>
+
+    <p style="margin-top:15px">
+        Aapko life mein jo bhi chahiye, dheere-dheere
+        sab mile. Aur jo dreams hain, woh bhi complete ho. ✨
+    </p>
+
+    <div class="quote">
+
+        "Some people make life brighter
+        just by being in it."
+
+        <small>
+            — You're one of them. 💙
+        </small>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     FLOWER
+======================================================= -->
+
+<div class="card flower-section reveal-card">
+
+    <div class="flower-big">
+        🌸
+    </div>
+
+    <h2>
+        A Little Flower For You 🌸
+    </h2>
+
+    <p>
+        Since you like flowers, this little website needed
+        some too. 🤍
+    </p>
+
+    <p style="margin-top:15px">
+        Soft, peaceful and beautiful...
+        kinda like the vibe I wanted this page to have. 💙
+    </p>
+
+</div>
+
+
+<!-- =======================================================
+     QUOTES
+======================================================= -->
+
+<div class="card reveal-card">
+
+    <h2>
+        ✨ Some Quotes For You
+    </h2>
+
+    <div class="quote-grid">
+
+        <div class="quote-box">
+
+            <div class="quote-icon">
+                🌱
+            </div>
+
+            <p>
+                "Good things take time,
+                and beautiful things are worth waiting for."
+            </p>
+
+        </div>
+
+
+        <div class="quote-box">
+
+            <div class="quote-icon">
+                ✨
+            </div>
+
+            <p>
+                "You are enough,
+                exactly as you are."
+            </p>
+
+        </div>
+
+
+        <div class="quote-box">
+
+            <div class="quote-icon">
+                🌸
+            </div>
+
+            <p>
+                "Keep smiling.
+                Your smile can make ordinary moments special."
+            </p>
+
+        </div>
+
+
+        <div class="quote-box">
+
+            <div class="quote-icon">
+                💙
+            </div>
+
+            <p>
+                "May your future be filled
+                with the happiness you deserve."
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     THINGS
+======================================================= -->
+
+<div class="card reveal-card">
+
+    <h2>
+        💙 Things I Like About You
+    </h2>
+
+    <div class="things">
+
+        <div class="thing">
+
+            <div class="thing-icon">
+                😂
+            </div>
+
+            <h3>
+                Your Laugh
+            </h3>
+
+            <p>
+                Aap hasti ho toh pata nahi kyun
+                mood automatically better ho jata hai.
+            </p>
+
+        </div>
+
+
+        <div class="thing">
+
+            <div class="thing-icon">
+                💬
+            </div>
+
+            <h3>
+                Your Messages
+            </h3>
+
+            <p>
+                Aapka ek simple sa "hii ji"
+                bhi notification ko interesting bana deta hai. 😭
+            </p>
+
+        </div>
+
+
+        <div class="thing">
+
+            <div class="thing-icon">
+                🌿
+            </div>
+
+            <h3>
+                Your Vibe
+            </h3>
+
+            <p>
+                Aapki energy bohot peaceful
+                aur cute si hai.
+            </p>
+
+        </div>
+
+
+        <div class="thing">
+
+            <div class="thing-icon">
+                💙
+            </div>
+
+            <h3>
+                Simply You
+            </h3>
+
+            <p>
+                You are the one who makes
+                my days better, My Lady. 🥹
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     TIMELINE
+======================================================= -->
+
+<div class="card reveal-card">
+
+    <h2>
+        🕰️ A Few Little Things
+    </h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>
+                🌱 First Conversations
+            </h3>
+
+            <p>
+                Kabhi normal si baat se conversation start hoti hai
+                aur pata nahi kab itni lambi ho jaati hai. (≧∇≦)ﾉ
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                💙 Random Talks
+            </h3>
+
+            <p>
+                Ek topic se doosre topic, phir teesre topic...
+                aur end mein pata hi nahi hota baat kahan se start hui thi. 😭
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                💬 "Huii Ji"
+            </h3>
+
+            <p>
+                Kuch messages simple hote hain,
+                lekin unka notification dekh ke smile aa hi jaati hai. 😭
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                🎂 Today
+            </h3>
+
+            <p>
+                Aaj officially aapka special day hai.
+                So please enjoy it properly ji. 💙
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     REMINDERS
+======================================================= -->
+
+<div class="card reveal-card">
+
+    <h2>
+        💙 A Little Reminder...
+    </h2>
+
+    <div class="reminders">
+
+        <div class="reminder">
+            You are doing better than you think.
+        </div>
+
+        <div class="reminder">
+            Your smile is precious.
+        </div>
+
+        <div class="reminder">
+            Don't let small problems ruin your days.
+        </div>
+
+        <div class="reminder">
+            You deserve good people around you.
+        </div>
+
+        <div class="reminder">
+            Keep chasing your dreams.
+        </div>
+
+        <div class="reminder">
+            And please keep smiling. 🌸
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     HEART MESSAGE
+======================================================= -->
+
+<div class="card reveal-card">
+
+    <h2>
+        🥹 Sach Bolu Toh...
+    </h2>
+
+    <p>
+        Aapko shayad pata bhi nahi hoga,
+        lekin aapki presence kabhi-kabhi
+        normal day ko bhi thoda better bana deti hai.
+    </p>
+
+    <p style="margin-top:15px">
+        Aur haan... birthday ke din zyada stress nahi lena hai. 💙
+    </p>
+
+    <p style="margin-top:15px">
+        Aaj sirf enjoy karna hai,
+        cake khana hai,
+        smile karna hai. 💕
+    </p>
+
+</div>
+
+
+<!-- =======================================================
+     SURPRISE
+======================================================= -->
+
+<div class="card surprise reveal-card">
+
+    <div class="surprise-icon">
+        🎁
+    </div>
+
+    <h2>
+        One Last Surprise
+    </h2>
+
+    <p>
+        Neeche wala button dabana...
+        lekin pehle promise karo ki smile karogi. 👀
+    </p>
+
+    <button
+        type="button"
+        onclick="openGift()"
+    >
+        🎁 Open Your Gift
+    </button>
+
+    <div
+        id="gift"
+        class="reveal hidden"
+    >
+
+        <h2>
+            🎉 HAPPY BIRTHDAYYY 🎉
+        </h2>
+
+        <p>
+            May this year bring you lots of happiness,
+            peaceful days, beautiful memories,
+            and plenty of reasons to smile. 💙
+        </p>
+
+        <p style="margin-top:15px">
+            Aur haan ji...
+            cake aapka hai, lekin ek slice mera. 🎂
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     FINAL
+======================================================= -->
+
+<div class="final">
+
+    <h2>
+        Happy Birthday Once Again 💙
+    </h2>
+
+    <p>
+        Stay happy. Stay smiling.
+        Keep being yourself.
+    </p>
+
+    <p style="margin-top:15px">
+        May all your little dreams slowly turn
+        into beautiful memories. ✨
+    </p>
+
+    <div class="signature">
+        — By yourrr Deepp &lt;3 💙
+    </div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   BACKGROUND PARTICLES
+========================================================= */
+
+const background =
+    document.querySelector(".background");
+
+const flowers = [
+    "🌸",
+    "✨",
+    "🤍",
+    "💙",
+    "❄️",
+    "✦"
+];
+
+for(let i = 0; i < 35; i++){
+
+    const petal =
+        document.createElement("div");
+
+    petal.className = "petal";
+
+    petal.textContent =
+        flowers[
+            Math.floor(
+                Math.random() * flowers.length
+            )
+        ];
+
+    petal.style.left =
+        Math.random() * 100 + "vw";
+
+    petal.style.fontSize =
+        12 + Math.random() * 25 + "px";
+
+    petal.style.animationDuration =
+        7 + Math.random() * 10 + "s";
+
+    petal.style.animationDelay =
+        Math.random() * 10 + "s";
+
+    background.appendChild(petal);
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const cards =
+    document.querySelectorAll(".reveal-card");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+cards.forEach(card => {
+    observer.observe(card);
+});
+
+
+/* =========================================================
+   START EXPERIENCE
+========================================================= */
+
+function startExperience(){
+
+    createFloating(20);
+
+    document.querySelector(".card")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+function openMessage(){
+
+    const message =
+        document.getElementById("message");
+
+    message.classList.remove("hidden");
+
+    createFloating(25);
+
+    message.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* =========================================================
+   GIFT
+========================================================= */
+
+function openGift(){
+
+    const gift =
+        document.getElementById("gift");
+
+    gift.classList.remove("hidden");
+
+    createFloating(50);
+
+    gift.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* =========================================================
+   FLOATING EFFECT
+========================================================= */
+
+function createFloating(amount){
+
+    const emojis = [
+        "🌸",
+        "💙",
+        "✨",
+        "🤍",
+        "❄️",
+        "💫",
+        "🎂",
+        "🌿"
+    ];
+
+    for(let i = 0; i < amount; i++){
+
+        const item =
+            document.createElement("div");
+
+        item.className = "floating";
+
+        item.textContent =
+            emojis[
+                Math.floor(
+                    Math.random() * emojis.length
+                )
+            ];
+
+        item.style.left =
+            Math.random() * 100 + "vw";
+
+        item.style.fontSize =
+            18 + Math.random() * 20 + "px";
+
+        const duration =
+            3 + Math.random() * 4;
+
+        item.style.animationDuration =
+            duration + "s";
+
+        document.body.appendChild(item);
+
+        setTimeout(
+            () => item.remove(),
+            (duration + .5) * 1000
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+const music =
+    document.getElementById("birthdayMusic");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+let musicPlaying = false;
+
+function toggleMusic(){
+
+    /*
+       Add your music file to the HTML:
+
+       <source src="music.mp3" type="audio/mpeg">
+
+       Then this button will control it.
+    */
+
+    if(!music.src){
+        alert("Add your music file inside the audio tag first. 🎵");
+        return;
+    }
+
+    if(musicPlaying){
+
+        music.pause();
+
+        musicButton.textContent = "🎵";
+
+        musicPlaying = false;
+
+    }else{
+
+        music.play();
+
+        musicButton.textContent = "🔊";
+
+        musicPlaying = true;
+
+    }
+
+}
+
+
+/* =========================================================
+   INITIAL FLOATING EFFECT
+========================================================= */
+
+setTimeout(
+    () => createFloating(8),
+    1200
+);
+
+</script>
+
+</body>
+</html>
+```
